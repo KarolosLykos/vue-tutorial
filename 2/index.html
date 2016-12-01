@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.JS Tutorial</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div id="app">
+    <ul>
+      <li><h1 v-html="intro" ></h1></li>
+      <li><h1 v-text="message" ></h1></li>
+      <li><h1 v-show="viewed" >3)You have viewed the page using v-show=true</h1></li>
+      <li><h1 v-if="viewed!=not_viewed" >4)Showing text with the help of an if statetment using v-if=(something)!=(somethingelse)</h1>
+      <li>
+        <h1 v-if="not_viewed" >5)You have viewed the page using v-if</h1>
+        <h1 v-else>5)You have Not view the page using v-if</h1>
+      </li>
+      <li><h1 v-pre>6){{ message }} using v-pre</h1></li>
+      <li><h1 v-once >7){{ message }} using v-once rendering the message only once</h1></li>
+      <li><h1 v-cloak>8){{ message }} Using v-cloak Until vuejs finishes loading and its ready to go </h1></li>
+    </ul>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '2)Hello Vue World',
+        intro:"1)Welcome to the Tutorial <small>Using v-text with small tags</small>",
+        viewed: true,
+        not_viewed: false,
+      }
+    })
+  </script>
+</html>
